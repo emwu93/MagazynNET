@@ -16,5 +16,12 @@ namespace MagazynNET
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'wysZamowienia.wys_zamowienia' table. You can move, or remove it, as needed.
+            this.wys_zamowieniaTableAdapter.Fill(this.wysZamowienia.wys_zamowienia);
+
+        }
     }
 }
