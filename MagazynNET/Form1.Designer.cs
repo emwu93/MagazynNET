@@ -257,6 +257,8 @@
             // 
             // klienciView
             // 
+            this.klienciView.AllowUserToAddRows = false;
+            this.klienciView.AllowUserToDeleteRows = false;
             this.klienciView.AutoGenerateColumns = false;
             this.klienciView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.klienciView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -271,6 +273,7 @@
             this.klienciView.DataSource = this.klienciBindingSource;
             this.klienciView.Location = new System.Drawing.Point(6, 6);
             this.klienciView.Name = "klienciView";
+            this.klienciView.ReadOnly = true;
             this.klienciView.Size = new System.Drawing.Size(752, 542);
             this.klienciView.TabIndex = 2;
             // 
