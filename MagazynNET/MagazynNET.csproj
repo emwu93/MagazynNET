@@ -52,6 +52,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klienci.cs" />
+    <Compile Include="magazynDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>magazynDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Produkty.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="wysZamowienia.Designer.cs">
@@ -72,6 +79,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="magazynDataSet.xsc">
+      <DependentUpon>magazynDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="magazynDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>magazynDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="magazynDataSet.xss">
+      <DependentUpon>magazynDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
