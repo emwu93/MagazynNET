@@ -15,16 +15,17 @@ namespace MagazynNET
     {
         SqlConnection conn = new SqlConnection("Data Source = MateuszPC; Initial Catalog = magazyn; User ID = studia; Password = studia");
         SqlCommand cmd;
-        BindingSource klienciBS = new BindingSource();
+        
+        Klienci klient = new Klienci();
 
         public Form1()
         {
             InitializeComponent();
+            klient_button_dodaj.Enabled = false;
+            
 
-            klienciBS.DataSource = magazynDataSet.Klienci;
 
-
-            klienciView.DataSource = klienciBS;
+            klienciView.DataSource = magazynDataSet.Klienci;
             //if (string.IsNullOrWhiteSpace(klient_nazwisko.Text) || (string.IsNullOrWhiteSpace(klient_adres.Text)) || (string.IsNullOrWhiteSpace(klient_imie.Text)) || (string.IsNullOrWhiteSpace(klient_kraj.Text)) || (string.IsNullOrWhiteSpace(klient_telefon.Text)) || (string.IsNullOrWhiteSpace(klient_miejscowosc.Text)))
             //{
             //    klient_button_dodaj.Enabled = false;
@@ -39,6 +40,8 @@ namespace MagazynNET
 
         }
 
+       
+
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'magazynDataSet.Klienci' table. You can move, or remove it, as needed.
@@ -49,12 +52,10 @@ namespace MagazynNET
         }
 
         private void klient_button_dodaj_Click(object sender, EventArgs e)
-        {
+        { 
+                    
             string query = "insert into Klienci(nazwa_firmy,imie,nazwisko,telefon,miejscowosc,kraj,adres) values (@nazwa_firmy,@imie,@nazwisko,@telefon,@miejscowosc,@kraj,@adres)";
-
-            klienciView.DataSource = null;
-            klienciView.Update();
-            klienciView.Refresh();
+                        
             cmd = new SqlCommand(query, conn);
             conn.Open();
             cmd.Parameters.Add("@nazwa_firmy",klient_firma.Text);
@@ -64,16 +65,19 @@ namespace MagazynNET
             cmd.Parameters.Add("@miejscowosc", klient_miejscowosc.Text);
             cmd.Parameters.Add("@kraj", klient_kraj.Text);
             cmd.Parameters.Add("@adres", klient_adres.Text);
-
-            klienciView.DataSource = klienciBS;
-            cmd.ExecuteNonQuery();
             
+
+            cmd.ExecuteNonQuery();            
             conn.Close();
 
-            //klienciView.Update();
-            //klienciView.Refresh();
+            this.klienciTableAdapter.Fill(this.magazynDataSet.Klienci);        
 
             
+        }
+
+        private void klient_imie_TextChanged(object sender, EventArgs e)
+        {
+            klient_button_dodaj.Enabled=!(string.IsNullOrWhiteSpace(klient_nazwisko.Text) || (string.IsNullOrWhiteSpace(klient_adres.Text)) || (string.IsNullOrWhiteSpace(klient_imie.Text)) || (string.IsNullOrWhiteSpace(klient_kraj.Text)) || (string.IsNullOrWhiteSpace(klient_telefon.Text)) || (string.IsNullOrWhiteSpace(klient_miejscowosc.Text)));
         }
     }
 }

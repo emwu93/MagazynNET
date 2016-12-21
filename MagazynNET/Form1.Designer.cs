@@ -57,6 +57,12 @@
             this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.magazynDataSet = new MagazynNET.magazynDataSet();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.klient_button_zapisz_zmiany = new System.Windows.Forms.Button();
+            this.klient_button_dodaj = new System.Windows.Forms.Button();
+            this.klient_button_filtruj = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.klient_adres = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.klient_kraj = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -75,12 +81,6 @@
             this.wys_zamowieniaTableAdapter = new MagazynNET.wysZamowieniaTableAdapters.wys_zamowieniaTableAdapter();
             this.wysZamowienia1 = new MagazynNET.wysZamowienia();
             this.klienciTableAdapter = new MagazynNET.magazynDataSetTableAdapters.KlienciTableAdapter();
-            this.klient_adres = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.klient_button_filtruj = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.klient_button_dodaj = new System.Windows.Forms.Button();
-            this.klient_button_zapisz_zmiany = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -91,9 +91,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.magazynDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wysZamowienia1)).BeginInit();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -350,6 +350,62 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.klient_button_zapisz_zmiany);
+            this.groupBox4.Controls.Add(this.klient_button_dodaj);
+            this.groupBox4.Location = new System.Drawing.Point(172, 330);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(181, 206);
+            this.groupBox4.TabIndex = 17;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Modyfikacja";
+            // 
+            // klient_button_zapisz_zmiany
+            // 
+            this.klient_button_zapisz_zmiany.Location = new System.Drawing.Point(48, 116);
+            this.klient_button_zapisz_zmiany.Name = "klient_button_zapisz_zmiany";
+            this.klient_button_zapisz_zmiany.Size = new System.Drawing.Size(95, 38);
+            this.klient_button_zapisz_zmiany.TabIndex = 19;
+            this.klient_button_zapisz_zmiany.Text = "Zapisz zmiany";
+            this.klient_button_zapisz_zmiany.UseVisualStyleBackColor = true;
+            // 
+            // klient_button_dodaj
+            // 
+            this.klient_button_dodaj.Location = new System.Drawing.Point(48, 45);
+            this.klient_button_dodaj.Name = "klient_button_dodaj";
+            this.klient_button_dodaj.Size = new System.Drawing.Size(95, 38);
+            this.klient_button_dodaj.TabIndex = 18;
+            this.klient_button_dodaj.Text = "Dodaj klienta";
+            this.klient_button_dodaj.UseVisualStyleBackColor = true;
+            this.klient_button_dodaj.Click += new System.EventHandler(this.klient_button_dodaj_Click);
+            // 
+            // klient_button_filtruj
+            // 
+            this.klient_button_filtruj.Location = new System.Drawing.Point(33, 330);
+            this.klient_button_filtruj.Name = "klient_button_filtruj";
+            this.klient_button_filtruj.Size = new System.Drawing.Size(95, 38);
+            this.klient_button_filtruj.TabIndex = 16;
+            this.klient_button_filtruj.Text = "Filtruj";
+            this.klient_button_filtruj.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(30, 267);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(34, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Adres";
+            // 
+            // klient_adres
+            // 
+            this.klient_adres.Location = new System.Drawing.Point(103, 260);
+            this.klient_adres.Name = "klient_adres";
+            this.klient_adres.Size = new System.Drawing.Size(212, 20);
+            this.klient_adres.TabIndex = 12;
+            this.klient_adres.TextChanged += new System.EventHandler(this.klient_imie_TextChanged);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -365,6 +421,7 @@
             this.klient_kraj.Name = "klient_kraj";
             this.klient_kraj.Size = new System.Drawing.Size(212, 20);
             this.klient_kraj.TabIndex = 10;
+            this.klient_kraj.TextChanged += new System.EventHandler(this.klient_imie_TextChanged);
             // 
             // label5
             // 
@@ -381,6 +438,7 @@
             this.klient_miejscowosc.Name = "klient_miejscowosc";
             this.klient_miejscowosc.Size = new System.Drawing.Size(212, 20);
             this.klient_miejscowosc.TabIndex = 8;
+            this.klient_miejscowosc.TextChanged += new System.EventHandler(this.klient_imie_TextChanged);
             // 
             // label4
             // 
@@ -397,6 +455,7 @@
             this.klient_telefon.Name = "klient_telefon";
             this.klient_telefon.Size = new System.Drawing.Size(212, 20);
             this.klient_telefon.TabIndex = 6;
+            this.klient_telefon.TextChanged += new System.EventHandler(this.klient_imie_TextChanged);
             // 
             // label3
             // 
@@ -413,6 +472,7 @@
             this.klient_firma.Name = "klient_firma";
             this.klient_firma.Size = new System.Drawing.Size(212, 20);
             this.klient_firma.TabIndex = 4;
+            this.klient_firma.TextChanged += new System.EventHandler(this.klient_imie_TextChanged);
             // 
             // label2
             // 
@@ -429,6 +489,7 @@
             this.klient_nazwisko.Name = "klient_nazwisko";
             this.klient_nazwisko.Size = new System.Drawing.Size(212, 20);
             this.klient_nazwisko.TabIndex = 2;
+            this.klient_nazwisko.TextChanged += new System.EventHandler(this.klient_imie_TextChanged);
             // 
             // label1
             // 
@@ -445,6 +506,7 @@
             this.klient_imie.Name = "klient_imie";
             this.klient_imie.Size = new System.Drawing.Size(212, 20);
             this.klient_imie.TabIndex = 0;
+            this.klient_imie.TextChanged += new System.EventHandler(this.klient_imie_TextChanged);
             // 
             // tabPage3
             // 
@@ -488,61 +550,6 @@
             // 
             this.klienciTableAdapter.ClearBeforeFill = true;
             // 
-            // klient_adres
-            // 
-            this.klient_adres.Location = new System.Drawing.Point(103, 260);
-            this.klient_adres.Name = "klient_adres";
-            this.klient_adres.Size = new System.Drawing.Size(212, 20);
-            this.klient_adres.TabIndex = 12;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 267);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Adres";
-            // 
-            // klient_button_filtruj
-            // 
-            this.klient_button_filtruj.Location = new System.Drawing.Point(33, 330);
-            this.klient_button_filtruj.Name = "klient_button_filtruj";
-            this.klient_button_filtruj.Size = new System.Drawing.Size(95, 38);
-            this.klient_button_filtruj.TabIndex = 16;
-            this.klient_button_filtruj.Text = "Filtruj";
-            this.klient_button_filtruj.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.klient_button_zapisz_zmiany);
-            this.groupBox4.Controls.Add(this.klient_button_dodaj);
-            this.groupBox4.Location = new System.Drawing.Point(172, 330);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(181, 206);
-            this.groupBox4.TabIndex = 17;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Modyfikacja";
-            // 
-            // klient_button_dodaj
-            // 
-            this.klient_button_dodaj.Location = new System.Drawing.Point(48, 45);
-            this.klient_button_dodaj.Name = "klient_button_dodaj";
-            this.klient_button_dodaj.Size = new System.Drawing.Size(95, 38);
-            this.klient_button_dodaj.TabIndex = 18;
-            this.klient_button_dodaj.Text = "Dodaj klienta";
-            this.klient_button_dodaj.UseVisualStyleBackColor = true;
-            this.klient_button_dodaj.Click += new System.EventHandler(this.klient_button_dodaj_Click);
-            // 
-            // klient_button_zapisz_zmiany
-            // 
-            this.klient_button_zapisz_zmiany.Location = new System.Drawing.Point(48, 116);
-            this.klient_button_zapisz_zmiany.Name = "klient_button_zapisz_zmiany";
-            this.klient_button_zapisz_zmiany.Size = new System.Drawing.Size(95, 38);
-            this.klient_button_zapisz_zmiany.TabIndex = 19;
-            this.klient_button_zapisz_zmiany.Text = "Zapisz zmiany";
-            this.klient_button_zapisz_zmiany.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -563,9 +570,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.magazynDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.wysZamowienia1)).EndInit();
-            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
