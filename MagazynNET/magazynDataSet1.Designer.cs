@@ -20,17 +20,17 @@ namespace MagazynNET {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("wysZamowienia")]
+    [global::System.Xml.Serialization.XmlRootAttribute("magazynDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class wysZamowienia : global::System.Data.DataSet {
+    public partial class magazynDataSet1 : global::System.Data.DataSet {
         
-        private wys_zamowieniaDataTable tablewys_zamowienia;
+        private ProduktyDataTable tableProdukty;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public wysZamowienia() {
+        public magazynDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace MagazynNET {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected wysZamowienia(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected magazynDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace MagazynNET {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["wys_zamowienia"] != null)) {
-                    base.Tables.Add(new wys_zamowieniaDataTable(ds.Tables["wys_zamowienia"]));
+                if ((ds.Tables["Produkty"] != null)) {
+                    base.Tables.Add(new ProduktyDataTable(ds.Tables["Produkty"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace MagazynNET {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public wys_zamowieniaDataTable wys_zamowienia {
+        public ProduktyDataTable Produkty {
             get {
-                return this.tablewys_zamowienia;
+                return this.tableProdukty;
             }
         }
         
@@ -127,7 +127,7 @@ namespace MagazynNET {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            wysZamowienia cln = ((wysZamowienia)(base.Clone()));
+            magazynDataSet1 cln = ((magazynDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace MagazynNET {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["wys_zamowienia"] != null)) {
-                    base.Tables.Add(new wys_zamowieniaDataTable(ds.Tables["wys_zamowienia"]));
+                if ((ds.Tables["Produkty"] != null)) {
+                    base.Tables.Add(new ProduktyDataTable(ds.Tables["Produkty"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace MagazynNET {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablewys_zamowienia = ((wys_zamowieniaDataTable)(base.Tables["wys_zamowienia"]));
+            this.tableProdukty = ((ProduktyDataTable)(base.Tables["Produkty"]));
             if ((initTable == true)) {
-                if ((this.tablewys_zamowienia != null)) {
-                    this.tablewys_zamowienia.InitVars();
+                if ((this.tableProdukty != null)) {
+                    this.tableProdukty.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace MagazynNET {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "wysZamowienia";
+            this.DataSetName = "magazynDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/wysZamowienia.xsd";
+            this.Namespace = "http://tempuri.org/magazynDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablewys_zamowienia = new wys_zamowieniaDataTable();
-            base.Tables.Add(this.tablewys_zamowienia);
+            this.tableProdukty = new ProduktyDataTable();
+            base.Tables.Add(this.tableProdukty);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializewys_zamowienia() {
+        private bool ShouldSerializeProdukty() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace MagazynNET {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            wysZamowienia ds = new wysZamowienia();
+            magazynDataSet1 ds = new magazynDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,41 +270,33 @@ namespace MagazynNET {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void wys_zamowieniaRowChangeEventHandler(object sender, wys_zamowieniaRowChangeEvent e);
+        public delegate void ProduktyRowChangeEventHandler(object sender, ProduktyRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class wys_zamowieniaDataTable : global::System.Data.TypedTableBase<wys_zamowieniaRow> {
+        public partial class ProduktyDataTable : global::System.Data.TypedTableBase<ProduktyRow> {
             
-            private global::System.Data.DataColumn columnid_zam;
-            
-            private global::System.Data.DataColumn columnnazwa_firmy;
-            
-            private global::System.Data.DataColumn columnmiejscowosc;
-            
-            private global::System.Data.DataColumn columnadres;
+            private global::System.Data.DataColumn columnid;
             
             private global::System.Data.DataColumn columnnazwa;
             
-            private global::System.Data.DataColumn columncena_za_szt;
+            private global::System.Data.DataColumn columnproducent;
             
             private global::System.Data.DataColumn columnilosc;
             
-            private global::System.Data.DataColumn columndata_zam;
+            private global::System.Data.DataColumn columnkraj_pochodzenia;
             
-            private global::System.Data.DataColumn columnimie;
+            private global::System.Data.DataColumn columncena_za_szt;
             
-            private global::System.Data.DataColumn columnnazwisko;
-            
-            private global::System.Data.DataColumn columnColumn1;
+            private global::System.Data.DataColumn columnzamowiona_ilosc;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public wys_zamowieniaDataTable() {
-                this.TableName = "wys_zamowienia";
+            public ProduktyDataTable() {
+                this.TableName = "Produkty";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -312,7 +304,7 @@ namespace MagazynNET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal wys_zamowieniaDataTable(global::System.Data.DataTable table) {
+            internal ProduktyDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -329,40 +321,16 @@ namespace MagazynNET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected wys_zamowieniaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ProduktyDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn id_zamColumn {
+            public global::System.Data.DataColumn idColumn {
                 get {
-                    return this.columnid_zam;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nazwa_firmyColumn {
-                get {
-                    return this.columnnazwa_firmy;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn miejscowoscColumn {
-                get {
-                    return this.columnmiejscowosc;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn adresColumn {
-                get {
-                    return this.columnadres;
+                    return this.columnid;
                 }
             }
             
@@ -376,9 +344,9 @@ namespace MagazynNET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cena_za_sztColumn {
+            public global::System.Data.DataColumn producentColumn {
                 get {
-                    return this.columncena_za_szt;
+                    return this.columnproducent;
                 }
             }
             
@@ -392,33 +360,25 @@ namespace MagazynNET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn data_zamColumn {
+            public global::System.Data.DataColumn kraj_pochodzeniaColumn {
                 get {
-                    return this.columndata_zam;
+                    return this.columnkraj_pochodzenia;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn imieColumn {
+            public global::System.Data.DataColumn cena_za_sztColumn {
                 get {
-                    return this.columnimie;
+                    return this.columncena_za_szt;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nazwiskoColumn {
+            public global::System.Data.DataColumn zamowiona_iloscColumn {
                 get {
-                    return this.columnnazwisko;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Column1Column {
-                get {
-                    return this.columnColumn1;
+                    return this.columnzamowiona_ilosc;
                 }
             }
             
@@ -433,55 +393,58 @@ namespace MagazynNET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public wys_zamowieniaRow this[int index] {
+            public ProduktyRow this[int index] {
                 get {
-                    return ((wys_zamowieniaRow)(this.Rows[index]));
+                    return ((ProduktyRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event wys_zamowieniaRowChangeEventHandler wys_zamowieniaRowChanging;
+            public event ProduktyRowChangeEventHandler ProduktyRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event wys_zamowieniaRowChangeEventHandler wys_zamowieniaRowChanged;
+            public event ProduktyRowChangeEventHandler ProduktyRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event wys_zamowieniaRowChangeEventHandler wys_zamowieniaRowDeleting;
+            public event ProduktyRowChangeEventHandler ProduktyRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event wys_zamowieniaRowChangeEventHandler wys_zamowieniaRowDeleted;
+            public event ProduktyRowChangeEventHandler ProduktyRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addwys_zamowieniaRow(wys_zamowieniaRow row) {
+            public void AddProduktyRow(ProduktyRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public wys_zamowieniaRow Addwys_zamowieniaRow(int id_zam, string nazwa_firmy, string miejscowosc, string adres, string nazwa, int cena_za_szt, int ilosc, System.DateTime data_zam, string imie, string nazwisko, int Column1) {
-                wys_zamowieniaRow rowwys_zamowieniaRow = ((wys_zamowieniaRow)(this.NewRow()));
+            public ProduktyRow AddProduktyRow(string nazwa, string producent, int ilosc, string kraj_pochodzenia, int cena_za_szt, int zamowiona_ilosc) {
+                ProduktyRow rowProduktyRow = ((ProduktyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id_zam,
-                        nazwa_firmy,
-                        miejscowosc,
-                        adres,
+                        null,
                         nazwa,
-                        cena_za_szt,
+                        producent,
                         ilosc,
-                        data_zam,
-                        imie,
-                        nazwisko,
-                        Column1};
-                rowwys_zamowieniaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowwys_zamowieniaRow);
-                return rowwys_zamowieniaRow;
+                        kraj_pochodzenia,
+                        cena_za_szt,
+                        zamowiona_ilosc};
+                rowProduktyRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowProduktyRow);
+                return rowProduktyRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ProduktyRow FindByid(int id) {
+                return ((ProduktyRow)(this.Rows.Find(new object[] {
+                            id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                wys_zamowieniaDataTable cln = ((wys_zamowieniaDataTable)(base.Clone()));
+                ProduktyDataTable cln = ((ProduktyDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -489,90 +452,76 @@ namespace MagazynNET {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new wys_zamowieniaDataTable();
+                return new ProduktyDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnid_zam = base.Columns["id_zam"];
-                this.columnnazwa_firmy = base.Columns["nazwa_firmy"];
-                this.columnmiejscowosc = base.Columns["miejscowosc"];
-                this.columnadres = base.Columns["adres"];
+                this.columnid = base.Columns["id"];
                 this.columnnazwa = base.Columns["nazwa"];
-                this.columncena_za_szt = base.Columns["cena_za_szt"];
+                this.columnproducent = base.Columns["producent"];
                 this.columnilosc = base.Columns["ilosc"];
-                this.columndata_zam = base.Columns["data_zam"];
-                this.columnimie = base.Columns["imie"];
-                this.columnnazwisko = base.Columns["nazwisko"];
-                this.columnColumn1 = base.Columns["Column1"];
+                this.columnkraj_pochodzenia = base.Columns["kraj_pochodzenia"];
+                this.columncena_za_szt = base.Columns["cena_za_szt"];
+                this.columnzamowiona_ilosc = base.Columns["zamowiona_ilosc"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnid_zam = new global::System.Data.DataColumn("id_zam", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_zam);
-                this.columnnazwa_firmy = new global::System.Data.DataColumn("nazwa_firmy", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnazwa_firmy);
-                this.columnmiejscowosc = new global::System.Data.DataColumn("miejscowosc", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmiejscowosc);
-                this.columnadres = new global::System.Data.DataColumn("adres", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnadres);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
                 this.columnnazwa = new global::System.Data.DataColumn("nazwa", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnazwa);
-                this.columncena_za_szt = new global::System.Data.DataColumn("cena_za_szt", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncena_za_szt);
+                this.columnproducent = new global::System.Data.DataColumn("producent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproducent);
                 this.columnilosc = new global::System.Data.DataColumn("ilosc", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnilosc);
-                this.columndata_zam = new global::System.Data.DataColumn("data_zam", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndata_zam);
-                this.columnimie = new global::System.Data.DataColumn("imie", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnimie);
-                this.columnnazwisko = new global::System.Data.DataColumn("nazwisko", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnazwisko);
-                this.columnColumn1 = new global::System.Data.DataColumn("Column1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnColumn1);
-                this.columnid_zam.AllowDBNull = false;
-                this.columnnazwa_firmy.MaxLength = 100;
-                this.columnmiejscowosc.AllowDBNull = false;
-                this.columnmiejscowosc.MaxLength = 50;
-                this.columnadres.AllowDBNull = false;
-                this.columnadres.MaxLength = 200;
+                this.columnkraj_pochodzenia = new global::System.Data.DataColumn("kraj_pochodzenia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkraj_pochodzenia);
+                this.columncena_za_szt = new global::System.Data.DataColumn("cena_za_szt", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncena_za_szt);
+                this.columnzamowiona_ilosc = new global::System.Data.DataColumn("zamowiona_ilosc", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnzamowiona_ilosc);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
                 this.columnnazwa.MaxLength = 200;
+                this.columnproducent.MaxLength = 100;
+                this.columnkraj_pochodzenia.MaxLength = 50;
                 this.columncena_za_szt.AllowDBNull = false;
-                this.columnilosc.AllowDBNull = false;
-                this.columnimie.AllowDBNull = false;
-                this.columnimie.MaxLength = 20;
-                this.columnnazwisko.AllowDBNull = false;
-                this.columnnazwisko.MaxLength = 50;
-                this.columnColumn1.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public wys_zamowieniaRow Newwys_zamowieniaRow() {
-                return ((wys_zamowieniaRow)(this.NewRow()));
+            public ProduktyRow NewProduktyRow() {
+                return ((ProduktyRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new wys_zamowieniaRow(builder);
+                return new ProduktyRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(wys_zamowieniaRow);
+                return typeof(ProduktyRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.wys_zamowieniaRowChanged != null)) {
-                    this.wys_zamowieniaRowChanged(this, new wys_zamowieniaRowChangeEvent(((wys_zamowieniaRow)(e.Row)), e.Action));
+                if ((this.ProduktyRowChanged != null)) {
+                    this.ProduktyRowChanged(this, new ProduktyRowChangeEvent(((ProduktyRow)(e.Row)), e.Action));
                 }
             }
             
@@ -580,8 +529,8 @@ namespace MagazynNET {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.wys_zamowieniaRowChanging != null)) {
-                    this.wys_zamowieniaRowChanging(this, new wys_zamowieniaRowChangeEvent(((wys_zamowieniaRow)(e.Row)), e.Action));
+                if ((this.ProduktyRowChanging != null)) {
+                    this.ProduktyRowChanging(this, new ProduktyRowChangeEvent(((ProduktyRow)(e.Row)), e.Action));
                 }
             }
             
@@ -589,8 +538,8 @@ namespace MagazynNET {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.wys_zamowieniaRowDeleted != null)) {
-                    this.wys_zamowieniaRowDeleted(this, new wys_zamowieniaRowChangeEvent(((wys_zamowieniaRow)(e.Row)), e.Action));
+                if ((this.ProduktyRowDeleted != null)) {
+                    this.ProduktyRowDeleted(this, new ProduktyRowChangeEvent(((ProduktyRow)(e.Row)), e.Action));
                 }
             }
             
@@ -598,14 +547,14 @@ namespace MagazynNET {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.wys_zamowieniaRowDeleting != null)) {
-                    this.wys_zamowieniaRowDeleting(this, new wys_zamowieniaRowChangeEvent(((wys_zamowieniaRow)(e.Row)), e.Action));
+                if ((this.ProduktyRowDeleting != null)) {
+                    this.ProduktyRowDeleting(this, new ProduktyRowChangeEvent(((ProduktyRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removewys_zamowieniaRow(wys_zamowieniaRow row) {
+            public void RemoveProduktyRow(ProduktyRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -614,7 +563,7 @@ namespace MagazynNET {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                wysZamowienia ds = new wysZamowienia();
+                magazynDataSet1 ds = new magazynDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -632,7 +581,7 @@ namespace MagazynNET {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "wys_zamowieniaDataTable";
+                attribute2.FixedValue = "ProduktyDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -676,63 +625,25 @@ namespace MagazynNET {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class wys_zamowieniaRow : global::System.Data.DataRow {
+        public partial class ProduktyRow : global::System.Data.DataRow {
             
-            private wys_zamowieniaDataTable tablewys_zamowienia;
+            private ProduktyDataTable tableProdukty;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal wys_zamowieniaRow(global::System.Data.DataRowBuilder rb) : 
+            internal ProduktyRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablewys_zamowienia = ((wys_zamowieniaDataTable)(this.Table));
+                this.tableProdukty = ((ProduktyDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_zam {
+            public int id {
                 get {
-                    return ((int)(this[this.tablewys_zamowienia.id_zamColumn]));
+                    return ((int)(this[this.tableProdukty.idColumn]));
                 }
                 set {
-                    this[this.tablewys_zamowienia.id_zamColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nazwa_firmy {
-                get {
-                    try {
-                        return ((string)(this[this.tablewys_zamowienia.nazwa_firmyColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nazwa_firmy\' in table \'wys_zamowienia\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablewys_zamowienia.nazwa_firmyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string miejscowosc {
-                get {
-                    return ((string)(this[this.tablewys_zamowienia.miejscowoscColumn]));
-                }
-                set {
-                    this[this.tablewys_zamowienia.miejscowoscColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string adres {
-                get {
-                    return ((string)(this[this.tablewys_zamowienia.adresColumn]));
-                }
-                set {
-                    this[this.tablewys_zamowienia.adresColumn] = value;
+                    this[this.tableProdukty.idColumn] = value;
                 }
             }
             
@@ -741,25 +652,30 @@ namespace MagazynNET {
             public string nazwa {
                 get {
                     try {
-                        return ((string)(this[this.tablewys_zamowienia.nazwaColumn]));
+                        return ((string)(this[this.tableProdukty.nazwaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nazwa\' in table \'wys_zamowienia\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'nazwa\' in table \'Produkty\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablewys_zamowienia.nazwaColumn] = value;
+                    this[this.tableProdukty.nazwaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int cena_za_szt {
+            public string producent {
                 get {
-                    return ((int)(this[this.tablewys_zamowienia.cena_za_sztColumn]));
+                    try {
+                        return ((string)(this[this.tableProdukty.producentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'producent\' in table \'Produkty\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tablewys_zamowienia.cena_za_sztColumn] = value;
+                    this[this.tableProdukty.producentColumn] = value;
                 }
             }
             
@@ -767,113 +683,119 @@ namespace MagazynNET {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ilosc {
                 get {
-                    return ((int)(this[this.tablewys_zamowienia.iloscColumn]));
-                }
-                set {
-                    this[this.tablewys_zamowienia.iloscColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime data_zam {
-                get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablewys_zamowienia.data_zamColumn]));
+                        return ((int)(this[this.tableProdukty.iloscColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'data_zam\' in table \'wys_zamowienia\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ilosc\' in table \'Produkty\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablewys_zamowienia.data_zamColumn] = value;
+                    this[this.tableProdukty.iloscColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string imie {
-                get {
-                    return ((string)(this[this.tablewys_zamowienia.imieColumn]));
-                }
-                set {
-                    this[this.tablewys_zamowienia.imieColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nazwisko {
-                get {
-                    return ((string)(this[this.tablewys_zamowienia.nazwiskoColumn]));
-                }
-                set {
-                    this[this.tablewys_zamowienia.nazwiskoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Column1 {
+            public string kraj_pochodzenia {
                 get {
                     try {
-                        return ((int)(this[this.tablewys_zamowienia.Column1Column]));
+                        return ((string)(this[this.tableProdukty.kraj_pochodzeniaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Column1\' in table \'wys_zamowienia\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'kraj_pochodzenia\' in table \'Produkty\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablewys_zamowienia.Column1Column] = value;
+                    this[this.tableProdukty.kraj_pochodzeniaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isnazwa_firmyNull() {
-                return this.IsNull(this.tablewys_zamowienia.nazwa_firmyColumn);
+            public int cena_za_szt {
+                get {
+                    return ((int)(this[this.tableProdukty.cena_za_sztColumn]));
+                }
+                set {
+                    this[this.tableProdukty.cena_za_sztColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setnazwa_firmyNull() {
-                this[this.tablewys_zamowienia.nazwa_firmyColumn] = global::System.Convert.DBNull;
+            public int zamowiona_ilosc {
+                get {
+                    try {
+                        return ((int)(this[this.tableProdukty.zamowiona_iloscColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'zamowiona_ilosc\' in table \'Produkty\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProdukty.zamowiona_iloscColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsnazwaNull() {
-                return this.IsNull(this.tablewys_zamowienia.nazwaColumn);
+                return this.IsNull(this.tableProdukty.nazwaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetnazwaNull() {
-                this[this.tablewys_zamowienia.nazwaColumn] = global::System.Convert.DBNull;
+                this[this.tableProdukty.nazwaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isdata_zamNull() {
-                return this.IsNull(this.tablewys_zamowienia.data_zamColumn);
+            public bool IsproducentNull() {
+                return this.IsNull(this.tableProdukty.producentColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setdata_zamNull() {
-                this[this.tablewys_zamowienia.data_zamColumn] = global::System.Convert.DBNull;
+            public void SetproducentNull() {
+                this[this.tableProdukty.producentColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsColumn1Null() {
-                return this.IsNull(this.tablewys_zamowienia.Column1Column);
+            public bool IsiloscNull() {
+                return this.IsNull(this.tableProdukty.iloscColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetColumn1Null() {
-                this[this.tablewys_zamowienia.Column1Column] = global::System.Convert.DBNull;
+            public void SetiloscNull() {
+                this[this.tableProdukty.iloscColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iskraj_pochodzeniaNull() {
+                return this.IsNull(this.tableProdukty.kraj_pochodzeniaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setkraj_pochodzeniaNull() {
+                this[this.tableProdukty.kraj_pochodzeniaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iszamowiona_iloscNull() {
+                return this.IsNull(this.tableProdukty.zamowiona_iloscColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setzamowiona_iloscNull() {
+                this[this.tableProdukty.zamowiona_iloscColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -881,22 +803,22 @@ namespace MagazynNET {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class wys_zamowieniaRowChangeEvent : global::System.EventArgs {
+        public class ProduktyRowChangeEvent : global::System.EventArgs {
             
-            private wys_zamowieniaRow eventRow;
+            private ProduktyRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public wys_zamowieniaRowChangeEvent(wys_zamowieniaRow row, global::System.Data.DataRowAction action) {
+            public ProduktyRowChangeEvent(ProduktyRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public wys_zamowieniaRow Row {
+            public ProduktyRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -912,7 +834,7 @@ namespace MagazynNET {
         }
     }
 }
-namespace MagazynNET.wysZamowieniaTableAdapters {
+namespace MagazynNET.magazynDataSet1TableAdapters {
     
     
     /// <summary>
@@ -924,7 +846,7 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class wys_zamowieniaTableAdapter : global::System.ComponentModel.Component {
+    public partial class ProduktyTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -938,7 +860,7 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public wys_zamowieniaTableAdapter() {
+        public ProduktyTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1035,19 +957,66 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "wys_zamowienia";
-            tableMapping.ColumnMappings.Add("id_zam", "id_zam");
-            tableMapping.ColumnMappings.Add("nazwa_firmy", "nazwa_firmy");
-            tableMapping.ColumnMappings.Add("miejscowosc", "miejscowosc");
-            tableMapping.ColumnMappings.Add("adres", "adres");
+            tableMapping.DataSetTable = "Produkty";
+            tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("nazwa", "nazwa");
-            tableMapping.ColumnMappings.Add("cena_za_szt", "cena_za_szt");
+            tableMapping.ColumnMappings.Add("producent", "producent");
             tableMapping.ColumnMappings.Add("ilosc", "ilosc");
-            tableMapping.ColumnMappings.Add("data_zam", "data_zam");
-            tableMapping.ColumnMappings.Add("imie", "imie");
-            tableMapping.ColumnMappings.Add("nazwisko", "nazwisko");
-            tableMapping.ColumnMappings.Add("Column1", "Column1");
+            tableMapping.ColumnMappings.Add("kraj_pochodzenia", "kraj_pochodzenia");
+            tableMapping.ColumnMappings.Add("cena_za_szt", "cena_za_szt");
+            tableMapping.ColumnMappings.Add("zamowiona_ilosc", "zamowiona_ilosc");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Produkty] WHERE (([id] = @Original_id) AND ((@IsNull_nazwa = 1 AND [nazwa] IS NULL) OR ([nazwa] = @Original_nazwa)) AND ((@IsNull_producent = 1 AND [producent] IS NULL) OR ([producent] = @Original_producent)) AND ((@IsNull_ilosc = 1 AND [ilosc] IS NULL) OR ([ilosc] = @Original_ilosc)) AND ((@IsNull_kraj_pochodzenia = 1 AND [kraj_pochodzenia] IS NULL) OR ([kraj_pochodzenia] = @Original_kraj_pochodzenia)) AND ([cena_za_szt] = @Original_cena_za_szt) AND ((@IsNull_zamowiona_ilosc = 1 AND [zamowiona_ilosc] IS NULL) OR ([zamowiona_ilosc] = @Original_zamowiona_ilosc)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nazwa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nazwa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_producent", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "producent", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_producent", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "producent", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ilosc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ilosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_kraj_pochodzenia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kraj_pochodzenia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kraj_pochodzenia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kraj_pochodzenia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cena_za_szt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cena_za_szt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_zamowiona_ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zamowiona_ilosc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_zamowiona_ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zamowiona_ilosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Produkty] ([nazwa], [producent], [ilosc], [kraj_pochodzenia], [cena_za_szt], [zamowiona_ilosc]) VALUES (@nazwa, @producent, @ilosc, @kraj_pochodzenia, @cena_za_szt, @zamowiona_ilosc);
+SELECT id, nazwa, producent, ilosc, kraj_pochodzenia, cena_za_szt, zamowiona_ilosc FROM Produkty WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@producent", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "producent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ilosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kraj_pochodzenia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kraj_pochodzenia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cena_za_szt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cena_za_szt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zamowiona_ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zamowiona_ilosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Produkty] SET [nazwa] = @nazwa, [producent] = @producent, [ilosc] = @ilosc, [kraj_pochodzenia] = @kraj_pochodzenia, [cena_za_szt] = @cena_za_szt, [zamowiona_ilosc] = @zamowiona_ilosc WHERE (([id] = @Original_id) AND ((@IsNull_nazwa = 1 AND [nazwa] IS NULL) OR ([nazwa] = @Original_nazwa)) AND ((@IsNull_producent = 1 AND [producent] IS NULL) OR ([producent] = @Original_producent)) AND ((@IsNull_ilosc = 1 AND [ilosc] IS NULL) OR ([ilosc] = @Original_ilosc)) AND ((@IsNull_kraj_pochodzenia = 1 AND [kraj_pochodzenia] IS NULL) OR ([kraj_pochodzenia] = @Original_kraj_pochodzenia)) AND ([cena_za_szt] = @Original_cena_za_szt) AND ((@IsNull_zamowiona_ilosc = 1 AND [zamowiona_ilosc] IS NULL) OR ([zamowiona_ilosc] = @Original_zamowiona_ilosc)));
+SELECT id, nazwa, producent, ilosc, kraj_pochodzenia, cena_za_szt, zamowiona_ilosc FROM Produkty WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@producent", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "producent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ilosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kraj_pochodzenia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kraj_pochodzenia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cena_za_szt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cena_za_szt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@zamowiona_ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zamowiona_ilosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nazwa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nazwa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_producent", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "producent", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_producent", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "producent", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ilosc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ilosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_kraj_pochodzenia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kraj_pochodzenia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kraj_pochodzenia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kraj_pochodzenia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cena_za_szt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cena_za_szt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_zamowiona_ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zamowiona_ilosc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_zamowiona_ilosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "zamowiona_ilosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1063,16 +1032,16 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.wys_zamowienia";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].CommandText = "SELECT id, nazwa, producent, ilosc, kraj_pochodzenia, cena_za_szt, zamowiona_ilos" +
+                "c FROM dbo.Produkty";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(wysZamowienia.wys_zamowieniaDataTable dataTable) {
+        public virtual int Fill(magazynDataSet1.ProduktyDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1085,11 +1054,258 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual wysZamowienia.wys_zamowieniaDataTable GetData() {
+        public virtual magazynDataSet1.ProduktyDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            wysZamowienia.wys_zamowieniaDataTable dataTable = new wysZamowienia.wys_zamowieniaDataTable();
+            magazynDataSet1.ProduktyDataTable dataTable = new magazynDataSet1.ProduktyDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(magazynDataSet1.ProduktyDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(magazynDataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "Produkty");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id, string Original_nazwa, string Original_producent, global::System.Nullable<int> Original_ilosc, string Original_kraj_pochodzenia, int Original_cena_za_szt, global::System.Nullable<int> Original_zamowiona_ilosc) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
+            if ((Original_nazwa == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_nazwa));
+            }
+            if ((Original_producent == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_producent));
+            }
+            if ((Original_ilosc.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ilosc.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_kraj_pochodzenia == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_kraj_pochodzenia));
+            }
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_cena_za_szt));
+            if ((Original_zamowiona_ilosc.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((int)(Original_zamowiona_ilosc.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string nazwa, string producent, global::System.Nullable<int> ilosc, string kraj_pochodzenia, int cena_za_szt, global::System.Nullable<int> zamowiona_ilosc) {
+            if ((nazwa == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(nazwa));
+            }
+            if ((producent == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(producent));
+            }
+            if ((ilosc.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ilosc.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((kraj_pochodzenia == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(kraj_pochodzenia));
+            }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(cena_za_szt));
+            if ((zamowiona_ilosc.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(zamowiona_ilosc.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string nazwa, string producent, global::System.Nullable<int> ilosc, string kraj_pochodzenia, int cena_za_szt, global::System.Nullable<int> zamowiona_ilosc, int Original_id, string Original_nazwa, string Original_producent, global::System.Nullable<int> Original_ilosc, string Original_kraj_pochodzenia, int Original_cena_za_szt, global::System.Nullable<int> Original_zamowiona_ilosc, int id) {
+            if ((nazwa == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nazwa));
+            }
+            if ((producent == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(producent));
+            }
+            if ((ilosc.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ilosc.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((kraj_pochodzenia == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(kraj_pochodzenia));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(cena_za_szt));
+            if ((zamowiona_ilosc.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(zamowiona_ilosc.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_id));
+            if ((Original_nazwa == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_nazwa));
+            }
+            if ((Original_producent == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_producent));
+            }
+            if ((Original_ilosc.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_ilosc.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_kraj_pochodzenia == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_kraj_pochodzenia));
+            }
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_cena_za_szt));
+            if ((Original_zamowiona_ilosc.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_zamowiona_ilosc.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string nazwa, string producent, global::System.Nullable<int> ilosc, string kraj_pochodzenia, int cena_za_szt, global::System.Nullable<int> zamowiona_ilosc, int Original_id, string Original_nazwa, string Original_producent, global::System.Nullable<int> Original_ilosc, string Original_kraj_pochodzenia, int Original_cena_za_szt, global::System.Nullable<int> Original_zamowiona_ilosc) {
+            return this.Update(nazwa, producent, ilosc, kraj_pochodzenia, cena_za_szt, zamowiona_ilosc, Original_id, Original_nazwa, Original_producent, Original_ilosc, Original_kraj_pochodzenia, Original_cena_za_szt, Original_zamowiona_ilosc, Original_id);
         }
     }
     
@@ -1105,6 +1321,8 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
+        private ProduktyTableAdapter _produktyTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1117,6 +1335,20 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ProduktyTableAdapter ProduktyTableAdapter {
+            get {
+                return this._produktyTableAdapter;
+            }
+            set {
+                this._produktyTableAdapter = value;
             }
         }
         
@@ -1139,6 +1371,10 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._produktyTableAdapter != null) 
+                            && (this._produktyTableAdapter.Connection != null))) {
+                    return this._produktyTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -1152,6 +1388,9 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._produktyTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -1161,8 +1400,17 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(wysZamowienia dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(magazynDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._produktyTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Produkty.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._produktyTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -1171,8 +1419,16 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(wysZamowienia dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(magazynDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._produktyTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Produkty.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._produktyTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -1181,8 +1437,16 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(wysZamowienia dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(magazynDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._produktyTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Produkty.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._produktyTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             return result;
         }
         
@@ -1215,12 +1479,17 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(wysZamowienia dataSet) {
+        public virtual int UpdateAll(magazynDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
+            }
+            if (((this._produktyTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._produktyTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1254,6 +1523,15 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._produktyTableAdapter != null)) {
+                    revertConnections.Add(this._produktyTableAdapter, this._produktyTableAdapter.Connection);
+                    this._produktyTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._produktyTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._produktyTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._produktyTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._produktyTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1311,6 +1589,10 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
+                }
+                if ((this._produktyTableAdapter != null)) {
+                    this._produktyTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._produktyTableAdapter]));
+                    this._produktyTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

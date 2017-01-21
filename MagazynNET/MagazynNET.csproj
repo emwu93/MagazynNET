@@ -53,10 +53,36 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Klienci.cs" />
+    <Compile Include="magazynDataSet.cs">
+      <DependentUpon>magazynDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="magazynDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>magazynDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="magazynDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>magazynDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="magazynDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>magazynDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="magazynDataSet3.cs">
+      <DependentUpon>magazynDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="magazynDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>magazynDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="magazynProdukty.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>magazynProdukty.xsd</DependentUpon>
     </Compile>
     <Compile Include="Produkty.cs" />
     <Compile Include="Program.cs" />
@@ -89,6 +115,50 @@
     </None>
     <None Include="magazynDataSet.xss">
       <DependentUpon>magazynDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="magazynDataSet1.xsc">
+      <DependentUpon>magazynDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="magazynDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>magazynDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="magazynDataSet1.xss">
+      <DependentUpon>magazynDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="magazynDataSet2.xsc">
+      <DependentUpon>magazynDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="magazynDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>magazynDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="magazynDataSet2.xss">
+      <DependentUpon>magazynDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="magazynDataSet3.xsc">
+      <DependentUpon>magazynDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="magazynDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>magazynDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="magazynDataSet3.xss">
+      <DependentUpon>magazynDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="magazynProdukty.xsc">
+      <DependentUpon>magazynProdukty.xsd</DependentUpon>
+    </None>
+    <None Include="magazynProdukty.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>magazynProdukty.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="magazynProdukty.xss">
+      <DependentUpon>magazynProdukty.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -279,6 +279,8 @@ namespace MagazynNET {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class KlienciDataTable : global::System.Data.TypedTableBase<KlienciRow> {
             
+            private global::System.Data.DataColumn columnid;
+            
             private global::System.Data.DataColumn columnnazwa_firmy;
             
             private global::System.Data.DataColumn columnimie;
@@ -324,6 +326,14 @@ namespace MagazynNET {
             protected KlienciDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -422,6 +432,7 @@ namespace MagazynNET {
             public KlienciRow AddKlienciRow(string nazwa_firmy, string imie, string nazwisko, string telefon, string miejscowosc, string kraj, string adres) {
                 KlienciRow rowKlienciRow = ((KlienciRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        null,
                         nazwa_firmy,
                         imie,
                         nazwisko,
@@ -432,6 +443,13 @@ namespace MagazynNET {
                 rowKlienciRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowKlienciRow);
                 return rowKlienciRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public KlienciRow FindByid(int id) {
+                return ((KlienciRow)(this.Rows.Find(new object[] {
+                            id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -451,6 +469,7 @@ namespace MagazynNET {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnid = base.Columns["id"];
                 this.columnnazwa_firmy = base.Columns["nazwa_firmy"];
                 this.columnimie = base.Columns["imie"];
                 this.columnnazwisko = base.Columns["nazwisko"];
@@ -463,6 +482,8 @@ namespace MagazynNET {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
                 this.columnnazwa_firmy = new global::System.Data.DataColumn("nazwa_firmy", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnazwa_firmy);
                 this.columnimie = new global::System.Data.DataColumn("imie", typeof(string), null, global::System.Data.MappingType.Element);
@@ -477,6 +498,14 @@ namespace MagazynNET {
                 base.Columns.Add(this.columnkraj);
                 this.columnadres = new global::System.Data.DataColumn("adres", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnadres);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
                 this.columnnazwa_firmy.MaxLength = 100;
                 this.columnimie.AllowDBNull = false;
                 this.columnimie.MaxLength = 20;
@@ -628,6 +657,17 @@ namespace MagazynNET {
             internal KlienciRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableKlienci = ((KlienciDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tableKlienci.idColumn]));
+                }
+                set {
+                    this[this.tableKlienci.idColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -884,6 +924,7 @@ namespace MagazynNET.magazynDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Klienci";
+            tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("nazwa_firmy", "nazwa_firmy");
             tableMapping.ColumnMappings.Add("imie", "imie");
             tableMapping.ColumnMappings.Add("nazwisko", "nazwisko");
@@ -892,11 +933,23 @@ namespace MagazynNET.magazynDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("kraj", "kraj");
             tableMapping.ColumnMappings.Add("adres", "adres");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Klienci] WHERE (([id] = @Original_id) AND ((@IsNull_nazwa_firmy = 1 AND [nazwa_firmy] IS NULL) OR ([nazwa_firmy] = @Original_nazwa_firmy)) AND ([imie] = @Original_imie) AND ([nazwisko] = @Original_nazwisko) AND ([telefon] = @Original_telefon) AND ([miejscowosc] = @Original_miejscowosc) AND ([kraj] = @Original_kraj) AND ([adres] = @Original_adres))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nazwa_firmy", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa_firmy", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nazwa_firmy", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa_firmy", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imie", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imie", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nazwisko", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwisko", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_telefon", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telefon", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_miejscowosc", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "miejscowosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kraj", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kraj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_adres", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adres", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Klienci] ([nazwa_firmy], [imie], [nazwisko], [telefon], [miejs" +
-                "cowosc], [kraj], [adres]) VALUES (@nazwa_firmy, @imie, @nazwisko, @telefon, @mie" +
-                "jscowosc, @kraj, @adres)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Klienci] ([nazwa_firmy], [imie], [nazwisko], [telefon], [miejscowosc], [kraj], [adres]) VALUES (@nazwa_firmy, @imie, @nazwisko, @telefon, @miejscowosc, @kraj, @adres);
+SELECT id, nazwa_firmy, imie, nazwisko, telefon, miejscowosc, kraj, adres FROM Klienci WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwa_firmy", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa_firmy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imie", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -905,6 +958,28 @@ namespace MagazynNET.magazynDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@miejscowosc", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "miejscowosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kraj", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kraj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@adres", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adres", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Klienci] SET [nazwa_firmy] = @nazwa_firmy, [imie] = @imie, [nazwisko] = @nazwisko, [telefon] = @telefon, [miejscowosc] = @miejscowosc, [kraj] = @kraj, [adres] = @adres WHERE (([id] = @Original_id) AND ((@IsNull_nazwa_firmy = 1 AND [nazwa_firmy] IS NULL) OR ([nazwa_firmy] = @Original_nazwa_firmy)) AND ([imie] = @Original_imie) AND ([nazwisko] = @Original_nazwisko) AND ([telefon] = @Original_telefon) AND ([miejscowosc] = @Original_miejscowosc) AND ([kraj] = @Original_kraj) AND ([adres] = @Original_adres));
+SELECT id, nazwa_firmy, imie, nazwisko, telefon, miejscowosc, kraj, adres FROM Klienci WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwa_firmy", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa_firmy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imie", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nazwisko", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwisko", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefon", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telefon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@miejscowosc", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "miejscowosc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kraj", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kraj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@adres", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adres", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nazwa_firmy", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa_firmy", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nazwa_firmy", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwa_firmy", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imie", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imie", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nazwisko", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nazwisko", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_telefon", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telefon", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_miejscowosc", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "miejscowosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kraj", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kraj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_adres", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adres", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -920,8 +995,8 @@ namespace MagazynNET.magazynDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT nazwa_firmy, imie, nazwisko, telefon, miejscowosc, kraj, adres FROM dbo.Kl" +
-                "ienci";
+            this._commandCollection[0].CommandText = "SELECT id, nazwa_firmy, imie, nazwisko, telefon, miejscowosc, kraj, adres FROM db" +
+                "o.Klienci";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -976,6 +1051,72 @@ namespace MagazynNET.magazynDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id, string Original_nazwa_firmy, string Original_imie, string Original_nazwisko, string Original_telefon, string Original_miejscowosc, string Original_kraj, string Original_adres) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
+            if ((Original_nazwa_firmy == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_nazwa_firmy));
+            }
+            if ((Original_imie == null)) {
+                throw new global::System.ArgumentNullException("Original_imie");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_imie));
+            }
+            if ((Original_nazwisko == null)) {
+                throw new global::System.ArgumentNullException("Original_nazwisko");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_nazwisko));
+            }
+            if ((Original_telefon == null)) {
+                throw new global::System.ArgumentNullException("Original_telefon");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_telefon));
+            }
+            if ((Original_miejscowosc == null)) {
+                throw new global::System.ArgumentNullException("Original_miejscowosc");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_miejscowosc));
+            }
+            if ((Original_kraj == null)) {
+                throw new global::System.ArgumentNullException("Original_kraj");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_kraj));
+            }
+            if ((Original_adres == null)) {
+                throw new global::System.ArgumentNullException("Original_adres");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_adres));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1039,6 +1180,139 @@ namespace MagazynNET.magazynDataSetTableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string nazwa_firmy, 
+                    string imie, 
+                    string nazwisko, 
+                    string telefon, 
+                    string miejscowosc, 
+                    string kraj, 
+                    string adres, 
+                    int Original_id, 
+                    string Original_nazwa_firmy, 
+                    string Original_imie, 
+                    string Original_nazwisko, 
+                    string Original_telefon, 
+                    string Original_miejscowosc, 
+                    string Original_kraj, 
+                    string Original_adres, 
+                    int id) {
+            if ((nazwa_firmy == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nazwa_firmy));
+            }
+            if ((imie == null)) {
+                throw new global::System.ArgumentNullException("imie");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(imie));
+            }
+            if ((nazwisko == null)) {
+                throw new global::System.ArgumentNullException("nazwisko");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(nazwisko));
+            }
+            if ((telefon == null)) {
+                throw new global::System.ArgumentNullException("telefon");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(telefon));
+            }
+            if ((miejscowosc == null)) {
+                throw new global::System.ArgumentNullException("miejscowosc");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(miejscowosc));
+            }
+            if ((kraj == null)) {
+                throw new global::System.ArgumentNullException("kraj");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(kraj));
+            }
+            if ((adres == null)) {
+                throw new global::System.ArgumentNullException("adres");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(adres));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_id));
+            if ((Original_nazwa_firmy == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_nazwa_firmy));
+            }
+            if ((Original_imie == null)) {
+                throw new global::System.ArgumentNullException("Original_imie");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_imie));
+            }
+            if ((Original_nazwisko == null)) {
+                throw new global::System.ArgumentNullException("Original_nazwisko");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_nazwisko));
+            }
+            if ((Original_telefon == null)) {
+                throw new global::System.ArgumentNullException("Original_telefon");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_telefon));
+            }
+            if ((Original_miejscowosc == null)) {
+                throw new global::System.ArgumentNullException("Original_miejscowosc");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_miejscowosc));
+            }
+            if ((Original_kraj == null)) {
+                throw new global::System.ArgumentNullException("Original_kraj");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_kraj));
+            }
+            if ((Original_adres == null)) {
+                throw new global::System.ArgumentNullException("Original_adres");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_adres));
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string nazwa_firmy, string imie, string nazwisko, string telefon, string miejscowosc, string kraj, string adres, int Original_id, string Original_nazwa_firmy, string Original_imie, string Original_nazwisko, string Original_telefon, string Original_miejscowosc, string Original_kraj, string Original_adres) {
+            return this.Update(nazwa_firmy, imie, nazwisko, telefon, miejscowosc, kraj, adres, Original_id, Original_nazwa_firmy, Original_imie, Original_nazwisko, Original_telefon, Original_miejscowosc, Original_kraj, Original_adres, Original_id);
         }
     }
     

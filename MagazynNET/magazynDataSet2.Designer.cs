@@ -20,9 +20,9 @@ namespace MagazynNET {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("wysZamowienia")]
+    [global::System.Xml.Serialization.XmlRootAttribute("magazynDataSet2")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class wysZamowienia : global::System.Data.DataSet {
+    public partial class magazynDataSet2 : global::System.Data.DataSet {
         
         private wys_zamowieniaDataTable tablewys_zamowienia;
         
@@ -30,7 +30,7 @@ namespace MagazynNET {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public wysZamowienia() {
+        public magazynDataSet2() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace MagazynNET {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected wysZamowienia(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected magazynDataSet2(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace MagazynNET {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            wysZamowienia cln = ((wysZamowienia)(base.Clone()));
+            magazynDataSet2 cln = ((magazynDataSet2)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace MagazynNET {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "wysZamowienia";
+            this.DataSetName = "magazynDataSet2";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/wysZamowienia.xsd";
+            this.Namespace = "http://tempuri.org/magazynDataSet2.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablewys_zamowienia = new wys_zamowieniaDataTable();
@@ -225,7 +225,7 @@ namespace MagazynNET {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            wysZamowienia ds = new wysZamowienia();
+            magazynDataSet2 ds = new magazynDataSet2();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -281,7 +281,13 @@ namespace MagazynNET {
             
             private global::System.Data.DataColumn columnid_zam;
             
+            private global::System.Data.DataColumn columndata_zam;
+            
             private global::System.Data.DataColumn columnnazwa_firmy;
+            
+            private global::System.Data.DataColumn columnimie;
+            
+            private global::System.Data.DataColumn columnnazwisko;
             
             private global::System.Data.DataColumn columnmiejscowosc;
             
@@ -292,12 +298,6 @@ namespace MagazynNET {
             private global::System.Data.DataColumn columncena_za_szt;
             
             private global::System.Data.DataColumn columnilosc;
-            
-            private global::System.Data.DataColumn columndata_zam;
-            
-            private global::System.Data.DataColumn columnimie;
-            
-            private global::System.Data.DataColumn columnnazwisko;
             
             private global::System.Data.DataColumn columnColumn1;
             
@@ -344,9 +344,33 @@ namespace MagazynNET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn data_zamColumn {
+                get {
+                    return this.columndata_zam;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn nazwa_firmyColumn {
                 get {
                     return this.columnnazwa_firmy;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn imieColumn {
+                get {
+                    return this.columnimie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nazwiskoColumn {
+                get {
+                    return this.columnnazwisko;
                 }
             }
             
@@ -387,30 +411,6 @@ namespace MagazynNET {
             public global::System.Data.DataColumn iloscColumn {
                 get {
                     return this.columnilosc;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn data_zamColumn {
-                get {
-                    return this.columndata_zam;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn imieColumn {
-                get {
-                    return this.columnimie;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nazwiskoColumn {
-                get {
-                    return this.columnnazwisko;
                 }
             }
             
@@ -459,19 +459,19 @@ namespace MagazynNET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public wys_zamowieniaRow Addwys_zamowieniaRow(int id_zam, string nazwa_firmy, string miejscowosc, string adres, string nazwa, int cena_za_szt, int ilosc, System.DateTime data_zam, string imie, string nazwisko, int Column1) {
+            public wys_zamowieniaRow Addwys_zamowieniaRow(int id_zam, System.DateTime data_zam, string nazwa_firmy, string imie, string nazwisko, string miejscowosc, string adres, string nazwa, int cena_za_szt, int ilosc, int Column1) {
                 wys_zamowieniaRow rowwys_zamowieniaRow = ((wys_zamowieniaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_zam,
+                        data_zam,
                         nazwa_firmy,
+                        imie,
+                        nazwisko,
                         miejscowosc,
                         adres,
                         nazwa,
                         cena_za_szt,
                         ilosc,
-                        data_zam,
-                        imie,
-                        nazwisko,
                         Column1};
                 rowwys_zamowieniaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowwys_zamowieniaRow);
@@ -496,15 +496,15 @@ namespace MagazynNET {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnid_zam = base.Columns["id_zam"];
+                this.columndata_zam = base.Columns["data_zam"];
                 this.columnnazwa_firmy = base.Columns["nazwa_firmy"];
+                this.columnimie = base.Columns["imie"];
+                this.columnnazwisko = base.Columns["nazwisko"];
                 this.columnmiejscowosc = base.Columns["miejscowosc"];
                 this.columnadres = base.Columns["adres"];
                 this.columnnazwa = base.Columns["nazwa"];
                 this.columncena_za_szt = base.Columns["cena_za_szt"];
                 this.columnilosc = base.Columns["ilosc"];
-                this.columndata_zam = base.Columns["data_zam"];
-                this.columnimie = base.Columns["imie"];
-                this.columnnazwisko = base.Columns["nazwisko"];
                 this.columnColumn1 = base.Columns["Column1"];
             }
             
@@ -513,8 +513,14 @@ namespace MagazynNET {
             private void InitClass() {
                 this.columnid_zam = new global::System.Data.DataColumn("id_zam", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_zam);
+                this.columndata_zam = new global::System.Data.DataColumn("data_zam", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndata_zam);
                 this.columnnazwa_firmy = new global::System.Data.DataColumn("nazwa_firmy", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnazwa_firmy);
+                this.columnimie = new global::System.Data.DataColumn("imie", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimie);
+                this.columnnazwisko = new global::System.Data.DataColumn("nazwisko", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnazwisko);
                 this.columnmiejscowosc = new global::System.Data.DataColumn("miejscowosc", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmiejscowosc);
                 this.columnadres = new global::System.Data.DataColumn("adres", typeof(string), null, global::System.Data.MappingType.Element);
@@ -525,16 +531,14 @@ namespace MagazynNET {
                 base.Columns.Add(this.columncena_za_szt);
                 this.columnilosc = new global::System.Data.DataColumn("ilosc", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnilosc);
-                this.columndata_zam = new global::System.Data.DataColumn("data_zam", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndata_zam);
-                this.columnimie = new global::System.Data.DataColumn("imie", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnimie);
-                this.columnnazwisko = new global::System.Data.DataColumn("nazwisko", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnazwisko);
                 this.columnColumn1 = new global::System.Data.DataColumn("Column1", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnColumn1);
                 this.columnid_zam.AllowDBNull = false;
                 this.columnnazwa_firmy.MaxLength = 100;
+                this.columnimie.AllowDBNull = false;
+                this.columnimie.MaxLength = 20;
+                this.columnnazwisko.AllowDBNull = false;
+                this.columnnazwisko.MaxLength = 50;
                 this.columnmiejscowosc.AllowDBNull = false;
                 this.columnmiejscowosc.MaxLength = 50;
                 this.columnadres.AllowDBNull = false;
@@ -542,10 +546,6 @@ namespace MagazynNET {
                 this.columnnazwa.MaxLength = 200;
                 this.columncena_za_szt.AllowDBNull = false;
                 this.columnilosc.AllowDBNull = false;
-                this.columnimie.AllowDBNull = false;
-                this.columnimie.MaxLength = 20;
-                this.columnnazwisko.AllowDBNull = false;
-                this.columnnazwisko.MaxLength = 50;
                 this.columnColumn1.ReadOnly = true;
             }
             
@@ -614,7 +614,7 @@ namespace MagazynNET {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                wysZamowienia ds = new wysZamowienia();
+                magazynDataSet2 ds = new magazynDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -700,6 +700,22 @@ namespace MagazynNET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime data_zam {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablewys_zamowienia.data_zamColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'data_zam\' in table \'wys_zamowienia\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablewys_zamowienia.data_zamColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string nazwa_firmy {
                 get {
                     try {
@@ -711,6 +727,28 @@ namespace MagazynNET {
                 }
                 set {
                     this[this.tablewys_zamowienia.nazwa_firmyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string imie {
+                get {
+                    return ((string)(this[this.tablewys_zamowienia.imieColumn]));
+                }
+                set {
+                    this[this.tablewys_zamowienia.imieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nazwisko {
+                get {
+                    return ((string)(this[this.tablewys_zamowienia.nazwiskoColumn]));
+                }
+                set {
+                    this[this.tablewys_zamowienia.nazwiskoColumn] = value;
                 }
             }
             
@@ -776,44 +814,6 @@ namespace MagazynNET {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime data_zam {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablewys_zamowienia.data_zamColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'data_zam\' in table \'wys_zamowienia\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablewys_zamowienia.data_zamColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string imie {
-                get {
-                    return ((string)(this[this.tablewys_zamowienia.imieColumn]));
-                }
-                set {
-                    this[this.tablewys_zamowienia.imieColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nazwisko {
-                get {
-                    return ((string)(this[this.tablewys_zamowienia.nazwiskoColumn]));
-                }
-                set {
-                    this[this.tablewys_zamowienia.nazwiskoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Column1 {
                 get {
                     try {
@@ -826,6 +826,18 @@ namespace MagazynNET {
                 set {
                     this[this.tablewys_zamowienia.Column1Column] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdata_zamNull() {
+                return this.IsNull(this.tablewys_zamowienia.data_zamColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdata_zamNull() {
+                this[this.tablewys_zamowienia.data_zamColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -850,18 +862,6 @@ namespace MagazynNET {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetnazwaNull() {
                 this[this.tablewys_zamowienia.nazwaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isdata_zamNull() {
-                return this.IsNull(this.tablewys_zamowienia.data_zamColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setdata_zamNull() {
-                this[this.tablewys_zamowienia.data_zamColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -912,7 +912,7 @@ namespace MagazynNET {
         }
     }
 }
-namespace MagazynNET.wysZamowieniaTableAdapters {
+namespace MagazynNET.magazynDataSet2TableAdapters {
     
     
     /// <summary>
@@ -1037,15 +1037,15 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "wys_zamowienia";
             tableMapping.ColumnMappings.Add("id_zam", "id_zam");
+            tableMapping.ColumnMappings.Add("data_zam", "data_zam");
             tableMapping.ColumnMappings.Add("nazwa_firmy", "nazwa_firmy");
+            tableMapping.ColumnMappings.Add("imie", "imie");
+            tableMapping.ColumnMappings.Add("nazwisko", "nazwisko");
             tableMapping.ColumnMappings.Add("miejscowosc", "miejscowosc");
             tableMapping.ColumnMappings.Add("adres", "adres");
             tableMapping.ColumnMappings.Add("nazwa", "nazwa");
             tableMapping.ColumnMappings.Add("cena_za_szt", "cena_za_szt");
             tableMapping.ColumnMappings.Add("ilosc", "ilosc");
-            tableMapping.ColumnMappings.Add("data_zam", "data_zam");
-            tableMapping.ColumnMappings.Add("imie", "imie");
-            tableMapping.ColumnMappings.Add("nazwisko", "nazwisko");
             tableMapping.ColumnMappings.Add("Column1", "Column1");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -1072,7 +1072,7 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(wysZamowienia.wys_zamowieniaDataTable dataTable) {
+        public virtual int Fill(magazynDataSet2.wys_zamowieniaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1085,9 +1085,9 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual wysZamowienia.wys_zamowieniaDataTable GetData() {
+        public virtual magazynDataSet2.wys_zamowieniaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            wysZamowienia.wys_zamowieniaDataTable dataTable = new wysZamowienia.wys_zamowieniaDataTable();
+            magazynDataSet2.wys_zamowieniaDataTable dataTable = new magazynDataSet2.wys_zamowieniaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1161,7 +1161,7 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(wysZamowienia dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(magazynDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1171,7 +1171,7 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(wysZamowienia dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(magazynDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1181,7 +1181,7 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(wysZamowienia dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(magazynDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1215,7 +1215,7 @@ namespace MagazynNET.wysZamowieniaTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(wysZamowienia dataSet) {
+        public virtual int UpdateAll(magazynDataSet2 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

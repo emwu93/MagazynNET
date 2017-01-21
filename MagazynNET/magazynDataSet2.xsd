@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="wysZamowienia" targetNamespace="http://tempuri.org/wysZamowienia.xsd" xmlns:mstns="http://tempuri.org/wysZamowienia.xsd" xmlns="http://tempuri.org/wysZamowienia.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="magazynDataSet2" targetNamespace="http://tempuri.org/magazynDataSet2.xsd" xmlns:mstns="http://tempuri.org/magazynDataSet2.xsd" xmlns="http://tempuri.org/magazynDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -22,15 +22,15 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="id_zam" DataSetColumn="id_zam" />
+              <Mapping SourceColumn="data_zam" DataSetColumn="data_zam" />
               <Mapping SourceColumn="nazwa_firmy" DataSetColumn="nazwa_firmy" />
+              <Mapping SourceColumn="imie" DataSetColumn="imie" />
+              <Mapping SourceColumn="nazwisko" DataSetColumn="nazwisko" />
               <Mapping SourceColumn="miejscowosc" DataSetColumn="miejscowosc" />
               <Mapping SourceColumn="adres" DataSetColumn="adres" />
               <Mapping SourceColumn="nazwa" DataSetColumn="nazwa" />
               <Mapping SourceColumn="cena_za_szt" DataSetColumn="cena_za_szt" />
               <Mapping SourceColumn="ilosc" DataSetColumn="ilosc" />
-              <Mapping SourceColumn="data_zam" DataSetColumn="data_zam" />
-              <Mapping SourceColumn="imie" DataSetColumn="imie" />
-              <Mapping SourceColumn="nazwisko" DataSetColumn="nazwisko" />
               <Mapping SourceColumn="Column1" DataSetColumn="Column1" />
             </Mappings>
             <Sources />
@@ -40,17 +40,32 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="wysZamowienia" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="wysZamowienia" msprop:Generator_UserDSName="wysZamowienia">
+  <xs:element name="magazynDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="magazynDataSet2" msprop:Generator_UserDSName="magazynDataSet2">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="wys_zamowienia" msprop:Generator_TableClassName="wys_zamowieniaDataTable" msprop:Generator_TableVarName="tablewys_zamowienia" msprop:Generator_RowChangedName="wys_zamowieniaRowChanged" msprop:Generator_TablePropName="wys_zamowienia" msprop:Generator_RowDeletingName="wys_zamowieniaRowDeleting" msprop:Generator_RowChangingName="wys_zamowieniaRowChanging" msprop:Generator_RowEvHandlerName="wys_zamowieniaRowChangeEventHandler" msprop:Generator_RowDeletedName="wys_zamowieniaRowDeleted" msprop:Generator_RowClassName="wys_zamowieniaRow" msprop:Generator_UserTableName="wys_zamowienia" msprop:Generator_RowEvArgName="wys_zamowieniaRowChangeEvent">
+        <xs:element name="wys_zamowienia" msprop:Generator_TableClassName="wys_zamowieniaDataTable" msprop:Generator_TableVarName="tablewys_zamowienia" msprop:Generator_TablePropName="wys_zamowienia" msprop:Generator_RowDeletingName="wys_zamowieniaRowDeleting" msprop:Generator_RowChangingName="wys_zamowieniaRowChanging" msprop:Generator_RowEvHandlerName="wys_zamowieniaRowChangeEventHandler" msprop:Generator_RowDeletedName="wys_zamowieniaRowDeleted" msprop:Generator_UserTableName="wys_zamowienia" msprop:Generator_RowChangedName="wys_zamowieniaRowChanged" msprop:Generator_RowEvArgName="wys_zamowieniaRowChangeEvent" msprop:Generator_RowClassName="wys_zamowieniaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_zam" msprop:Generator_ColumnVarNameInTable="columnid_zam" msprop:Generator_ColumnPropNameInRow="id_zam" msprop:Generator_ColumnPropNameInTable="id_zamColumn" msprop:Generator_UserColumnName="id_zam" type="xs:int" />
+              <xs:element name="data_zam" msprop:Generator_ColumnVarNameInTable="columndata_zam" msprop:Generator_ColumnPropNameInRow="data_zam" msprop:Generator_ColumnPropNameInTable="data_zamColumn" msprop:Generator_UserColumnName="data_zam" type="xs:dateTime" minOccurs="0" />
               <xs:element name="nazwa_firmy" msprop:Generator_ColumnVarNameInTable="columnnazwa_firmy" msprop:Generator_ColumnPropNameInRow="nazwa_firmy" msprop:Generator_ColumnPropNameInTable="nazwa_firmyColumn" msprop:Generator_UserColumnName="nazwa_firmy" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="imie" msprop:Generator_ColumnVarNameInTable="columnimie" msprop:Generator_ColumnPropNameInRow="imie" msprop:Generator_ColumnPropNameInTable="imieColumn" msprop:Generator_UserColumnName="imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nazwisko" msprop:Generator_ColumnVarNameInTable="columnnazwisko" msprop:Generator_ColumnPropNameInRow="nazwisko" msprop:Generator_ColumnPropNameInTable="nazwiskoColumn" msprop:Generator_UserColumnName="nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -77,21 +92,6 @@
               </xs:element>
               <xs:element name="cena_za_szt" msprop:Generator_ColumnVarNameInTable="columncena_za_szt" msprop:Generator_ColumnPropNameInRow="cena_za_szt" msprop:Generator_ColumnPropNameInTable="cena_za_sztColumn" msprop:Generator_UserColumnName="cena_za_szt" type="xs:int" />
               <xs:element name="ilosc" msprop:Generator_ColumnVarNameInTable="columnilosc" msprop:Generator_ColumnPropNameInRow="ilosc" msprop:Generator_ColumnPropNameInTable="iloscColumn" msprop:Generator_UserColumnName="ilosc" type="xs:int" />
-              <xs:element name="data_zam" msprop:Generator_ColumnVarNameInTable="columndata_zam" msprop:Generator_ColumnPropNameInRow="data_zam" msprop:Generator_ColumnPropNameInTable="data_zamColumn" msprop:Generator_UserColumnName="data_zam" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="imie" msprop:Generator_ColumnVarNameInTable="columnimie" msprop:Generator_ColumnPropNameInRow="imie" msprop:Generator_ColumnPropNameInTable="imieColumn" msprop:Generator_UserColumnName="imie">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="nazwisko" msprop:Generator_ColumnVarNameInTable="columnnazwisko" msprop:Generator_ColumnPropNameInRow="nazwisko" msprop:Generator_ColumnPropNameInTable="nazwiskoColumn" msprop:Generator_UserColumnName="nazwisko">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="Column1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnColumn1" msprop:Generator_ColumnPropNameInRow="Column1" msprop:Generator_ColumnPropNameInTable="Column1Column" msprop:Generator_UserColumnName="Column1" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
